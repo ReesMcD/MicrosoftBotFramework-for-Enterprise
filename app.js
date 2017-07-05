@@ -1,3 +1,4 @@
+var fs = require('fs');
 var restify = require('restify');
 var builder = require('botbuilder');
 var xml = require('./utilities/xmlparser.js');
@@ -36,9 +37,9 @@ bot.dialog('help', (session, args, next) => {
     });
 
 bot.dialog('xml', (session, args, next) => {
-    var testxml = new xml("<root>Hello xml2js!</root>");
+    var testxml = new xml("<root>Hell world!</root>");
     // Send message to the user and end this dialog
-    session.endDialog(testxml.parse.toString());
+    session.endDialog(JSON.stringify(testxml.StringParser));
 }).triggerAction({
     matches: /^xml$/,
     onSelectAction: (session, args, next) => {
