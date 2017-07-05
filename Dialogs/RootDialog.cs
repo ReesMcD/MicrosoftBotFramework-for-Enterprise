@@ -25,7 +25,14 @@ namespace EricCortana.Dialogs
             // return our reply to the user
             await context.PostAsync($"You sent {activity.Text} which was {length} characters");
 
+            await this.SendWelcomeMessageAsync(context);
+
             context.Wait(MessageReceivedAsync);
+        }
+
+        private async Task SendWelcomeMessageAsync(IDialogContext context) {
+            string current_time = DateTime.Now.ToString("h:mm tt");
+            await context.PostAsync("Hi Jun, it's " + current_time + ". What would you like to do?", current_time);
         }
     }
 }
