@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/sc1f/eric-cortana/issues"
   },
-  "homepage": "https://github.com/sc1f/eric-cortana#readme"
+  "homepage": "https://github.com/sc1f/eric-cortana#readme",
+  "dependencies": {
+    "botbuilder": "^3.8.4",
+    "restify": "^5.0.0"
+  }
 }
