@@ -37,38 +37,39 @@ bot.dialog('help', (session, args, next) => {
 });
 
 bot.dialog('search', (session, args, next) => {
-  // Send message to the user and end this dialogss
-  session.endDialog('This is a simple bot that collects a name and age.');
+  request('https://jsonplaceholder.typicode.com/posts/1', function(err, res, body) {
+    json = JSON.parse(body)
+    console.log(json);
+    output = json.id //Change to needed data
+    session.endDialog(output.toString());
+  })
 }).triggerAction({
   matches: /^search$/,
   onSelectAction: (session, args, next) => {
-    request('https://jsonplaceholder.typicode.com/posts/1', function(err, res, body) {
-        json = JSON.parse(body)
-        console.log(json);
-        output = json.id //Change to needed data
-        session.endDialog(output.toString());
-      })
+    // Add the help dialog to the dialog stack
+    // (override the default behavior of replacing the stack)
+    session.beginDialog(args.action, args);
   }
 });
 
-    bot.dialog('choices', (session, args, next) => {
-      // Send message to the user and end this dialog
-      var msg = new builder.Message(session)
-        .text("Thank you for expressing interest in our premium golf shirt! What color of shirt would you like?")
-        .suggestedActions(
-          builder.SuggestedActions.create(
-            session, [
-              builder.CardAction.imBack(session, "productId=1&color=green", "Green"),
-              builder.CardAction.imBack(session, "productId=1&color=blue", "Blue"),
-              builder.CardAction.imBack(session, "productId=1&color=red", "Red")
-            ]
-          ));
-      session.endDialog(msg);
-    }).triggerAction({
-      matches: /^choices$/,
-      onSelectAction: (session, args, next) => {
-        // Add the help dialog to the dialog stack
-        // (override the default behavior of replacing the stack)
-        session.beginDialog(args.action, args);
-      }
-    });
+bot.dialog('choices', (session, args, next) => {
+  // Send message to the user and end this dialog
+  var msg = new builder.Message(session)
+    .text("Thank you for expressing interest in our premium golf shirt! What color of shirt would you like?")
+    .suggestedActions(
+      builder.SuggestedActions.create(
+        session, [
+          builder.CardAction.imBack(session, "productId=1&color=green", "Green"),
+          builder.CardAction.imBack(session, "productId=1&color=blue", "Blue"),
+          builder.CardAction.imBack(session, "productId=1&color=red", "Red")
+        ]
+      ));
+  session.endDialog(msg);
+}).triggerAction({
+  matches: /^choices$/,
+  onSelectAction: (session, args, next) => {
+    // Add the help dialog to the dialog stack
+    // (override the default behavior of replacing the stack)
+    session.beginDialog(args.action, args);
+  }
+});
