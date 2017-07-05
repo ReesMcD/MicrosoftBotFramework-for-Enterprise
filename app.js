@@ -37,9 +37,10 @@ bot.dialog('help', (session, args, next) => {
     });
 
 bot.dialog('xml', (session, args, next) => {
-    var testxml = new xml("<root>Hell world!</root>");
+    //var testxml = new xml("<root>Hell world!</root>");
+    var xmlfile = new xml(null, 'search.xml').FileParser.split('<')[12];
     // Send message to the user and end this dialog
-    session.endDialog(JSON.stringify(testxml.StringParser));
+    session.endDialog(xmlfile);
 }).triggerAction({
     matches: /^xml$/,
     onSelectAction: (session, args, next) => {
