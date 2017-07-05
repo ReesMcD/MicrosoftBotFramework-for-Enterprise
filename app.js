@@ -1,7 +1,7 @@
 var fs = require('fs');
 var restify = require('restify');
 var builder = require('botbuilder');
-var xml = require('./utilities/xmlparser.js');
+var parseString = require('xml2js').parseString;//require('./utilities/xmlparser.js');
 
 // Setup Restify Server
 var server = restify.createServer();
@@ -19,32 +19,55 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
-var bot = new builder.UniversalBot(connector, function (session) {
+var bot = new builder.UniversalBot(connector, (session) => {
     session.send("You said: %s", session.message.text);
 });
 
-// Trigger a sample action
 bot.dialog('help', (session, args, next) => {
-    // Send message to the user and end this dialog
-    session.endDialog('This is a simple bot that searches ERIC.');
+    // Send message to the user and end this dialogss
+    session.endDialog('This is a simple bot that collects a name and age.');
 }).triggerAction({
     matches: /^help$/,
     onSelectAction: (session, args, next) => {
-        // Add the help dialog to the dialog stack 
+        // Add the help dialog to the dialog stack
         // (override the default behavior of replacing the stack)
         session.beginDialog(args.action, args);
     }
-    });
+});
 
 bot.dialog('xml', (session, args, next) => {
-    //var testxml = new xml("<root>Hell world!</root>");
-    var xmlfile = new xml(null, 'search.xml').FileParser.split('<')[12];
     // Send message to the user and end this dialog
-    session.endDialog(xmlfile);
+    var xml = '';
+    parseString('<root>Hello World</root>', function(err, res) {
+        xml = res.root;
+    });
+    session.endDialog(xml);
 }).triggerAction({
     matches: /^xml$/,
     onSelectAction: (session, args, next) => {
-        // Add the help dialog to the dialog stack 
+        // Add the help dialog to the dialog stack
+        // (override the default behavior of replacing the stack)
+        session.beginDialog(args.action, args);
+    }
+});
+
+bot.dialog('choices', (session, args, next) => {
+    // Send message to the user and end this dialog
+    var msg = new builder.Message(session)
+        .text("Thank you for expressing interest in our premium golf shirt! What color of shirt would you like?")
+        .suggestedActions(
+            builder.SuggestedActions.create(
+                session, [
+                    builder.CardAction.imBack(session, "productId=1&color=green", "Green"),
+                    builder.CardAction.imBack(session, "productId=1&color=blue", "Blue"),
+                    builder.CardAction.imBack(session, "productId=1&color=red", "Red")
+                ]
+            ));
+    session.endDialog(msg);
+}).triggerAction({
+    matches: /^choices$/,
+    onSelectAction: (session, args, next) => {
+        // Add the help dialog to the dialog stack
         // (override the default behavior of replacing the stack)
         session.beginDialog(args.action, args);
     }
