@@ -36,15 +36,20 @@ bot.dialog('help', (session, args, next) => {
   }
 });
 
-bot.dialog('xml', (session, args, next) => {
-
-      request('https://jsonplaceholder.typicode.com/posts/1', function(err, res, body) {
-          json = JSON.parse(body)
-          console.log(json);
-          output = json.id //Change to needed data
-          session.endDialog(output.toString());
-        }
-      });
+bot.dialog('search', (session, args, next) => {
+  // Send message to the user and end this dialogss
+  session.endDialog('This is a simple bot that collects a name and age.');
+}).triggerAction({
+  matches: /^search$/,
+  onSelectAction: (session, args, next) => {
+    request('https://jsonplaceholder.typicode.com/posts/1', function(err, res, body) {
+        json = JSON.parse(body)
+        console.log(json);
+        output = json.id //Change to needed data
+        session.endDialog(output.toString());
+      })
+  }
+});
 
     bot.dialog('choices', (session, args, next) => {
       // Send message to the user and end this dialog
