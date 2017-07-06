@@ -6,4 +6,6 @@ Groundwork to implement Microsoft’s Bot framework and Cortana with Textron's E
 ie company website, email, skype, etc.
 
 Node.js used for the bot, in actual implementation a proxy is used inplace of the seen 
-local server for authentication with the enterprise.
+local server for authentication with the enterprise. 
+
+A flask python-based local server is used to host test data in this example. 
