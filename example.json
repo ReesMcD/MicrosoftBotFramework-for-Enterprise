@@ -7,12 +7,12 @@
     "-m:type": "Microsoft.Office.Server.Search.REST.SearchResult",
     "d:ElapsedTime": {
       "-m:type": "Edm.Int32",
-      "#text": "187"
+      "#text": "171"
     },
     "d:PrimaryQueryResult": {
       "-m:type": "Microsoft.Office.Server.Search.REST.QueryResult",
       "d:CustomResults": { "-m:type": "Collection(Microsoft.Office.Server.Search.REST.CustomResult)" },
-      "d:QueryId": "c5b90377-72e0-427c-bcde-5f89d42c8f58",
+      "d:QueryId": "07439178-907d-4a8a-b893-81e614cfda6b",
       "d:QueryRuleId": {
         "-m:type": "Edm.Guid",
         "#text": "00000000-0000-0000-0000-000000000000"
@@ -33,13 +33,13 @@
             {
               "-m:type": "SP.KeyValue",
               "d:Key": "ExecutionTimeMs",
-              "d:Value": "0",
+              "d:Value": "156",
               "d:ValueType": "Edm.Int32"
             },
             {
               "-m:type": "SP.KeyValue",
               "d:Key": "QueryModification",
-              "d:Value": "bell helicopter -ContentClass=urn:content-class:SPSPeople",
+              "d:Value": "kautex -ContentClass=urn:content-class:SPSPeople",
               "d:ValueType": "Edm.String"
             },
             {
@@ -102,87 +102,357 @@
         "d:ResultTitleUrl": { "-m:null": "true" },
         "d:RowCount": {
           "-m:type": "Edm.Int32",
-          "#text": "1"
+          "#text": "5"
         },
         "d:Table": {
           "-m:type": "SP.SimpleDataTable",
           "d:Rows": {
-            "d:element": {
-              "-m:type": "SP.SimpleDataRow",
-              "d:Cells": {
-                "d:element": [
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "Rank",
-                    "d:Value": "20.9179306030273",
-                    "d:ValueType": "Edm.Double"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "DocId",
-                    "d:Value": "5936562",
-                    "d:ValueType": "Edm.Int64"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "Title",
-                    "d:Value": "Bell-Helicopter_Brand-Governance_150616-R00_Email",
-                    "d:ValueType": "Edm.String"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "Path",
-                    "d:Value": "http://eric2-1.textron.com/BellHelicopter/COM_INF/ERICDocuments/Bell-Helicopter_Brand-Governance_150616-R00_Email.pdf",
-                    "d:ValueType": "Edm.String"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "OriginalPath",
-                    "d:Value": "http://eric2-1.textron.com/BellHelicopter/COM_INF/ERICDocuments/Bell-Helicopter_Brand-Governance_150616-R00_Email.pdf",
-                    "d:ValueType": "Edm.String"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "PartitionId",
-                    "d:Value": "0c37852b-34d0-418e-91c6-2ac25af4be5b",
-                    "d:ValueType": "Edm.Guid"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "UrlZone",
-                    "d:Value": "0",
-                    "d:ValueType": "Edm.Int32"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "AAMEnabledManagedProperties",
-                    "d:Value": "AttachmentURI;deeplinks;DefaultEncodingURL;ExternalMediaURL;HierarchyUrl;OrgParentUrls;OrgUrls;OriginalPath;ParentLink;Path;PictureThumbnailURL;PictureURL;PublishingImage;recommendedfor;ServerRedirectedEmbedURL;ServerRedirectedPreviewURL;ServerRedirectedURL;SiteLogo;SitePath;SPSiteURL;UserEncodingURL",
-                    "d:ValueType": "Edm.String"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "RenderTemplateId",
-                    "d:Value": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default.js",
-                    "d:ValueType": "Edm.String"
-                  },
-                  {
-                    "-m:type": "SP.KeyValue",
-                    "d:Key": "piSearchResultId",
-                    "d:Value": "0_1",
-                    "d:ValueType": "Edm.String"
-                  }
-                ]
+            "d:element": [
+              {
+                "-m:type": "SP.SimpleDataRow",
+                "d:Cells": {
+                  "d:element": [
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Rank",
+                      "d:Value": "13.0070314407349",
+                      "d:ValueType": "Edm.Double"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "DocId",
+                      "d:Value": "2308544",
+                      "d:ValueType": "Edm.Int64"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Title",
+                      "d:Value": "Kautex",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Path",
+                      "d:Value": "http://corp.sp.textron.com/sites/tis/itrm/Projects/Communications/Communications Archive/ITRM meeting Archive/ITRM face to face/2010 - September/BU Updates and Over_Under Secured Presentations/Kautex - BU Update.pptx",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "OriginalPath",
+                      "d:Value": "http://corp.sp.textron.com/sites/tis/itrm/Projects/Communications/Communications Archive/ITRM meeting Archive/ITRM face to face/2010 - September/BU Updates and Over_Under Secured Presentations/Kautex - BU Update.pptx",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "PartitionId",
+                      "d:Value": "0c37852b-34d0-418e-91c6-2ac25af4be5b",
+                      "d:ValueType": "Edm.Guid"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "UrlZone",
+                      "d:Value": "3",
+                      "d:ValueType": "Edm.Int32"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "AAMEnabledManagedProperties",
+                      "d:Value": "AttachmentURI;deeplinks;DefaultEncodingURL;ExternalMediaURL;HierarchyUrl;OrgParentUrls;OrgUrls;OriginalPath;ParentLink;Path;PictureThumbnailURL;PictureURL;PublishingImage;recommendedfor;ServerRedirectedEmbedURL;ServerRedirectedPreviewURL;ServerRedirectedURL;SiteLogo;SitePath;SPSiteURL;UserEncodingURL",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "RenderTemplateId",
+                      "d:Value": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default.js",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "piSearchResultId",
+                      "d:Value": "0_1",
+                      "d:ValueType": "Edm.String"
+                    }
+                  ]
+                }
+              },
+              {
+                "-m:type": "SP.SimpleDataRow",
+                "d:Cells": {
+                  "d:element": [
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Rank",
+                      "d:Value": "12.9356889724731",
+                      "d:ValueType": "Edm.Double"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "DocId",
+                      "d:Value": "1900703",
+                      "d:ValueType": "Edm.Int64"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Title",
+                      "d:Value": "Kautex Avilla Site base Disaster Recovery Exercise IBM Boulder Colorado",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Path",
+                      "d:Value": "http://corp.sp.textron.com/sites/tis/strategy/ITDR/Kautex 2014 Avilla DR Test/Kautex.docx",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "OriginalPath",
+                      "d:Value": "http://corp.sp.textron.com/sites/tis/strategy/ITDR/Kautex 2014 Avilla DR Test/Kautex.docx",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "PartitionId",
+                      "d:Value": "0c37852b-34d0-418e-91c6-2ac25af4be5b",
+                      "d:ValueType": "Edm.Guid"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "UrlZone",
+                      "d:Value": "3",
+                      "d:ValueType": "Edm.Int32"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "AAMEnabledManagedProperties",
+                      "d:Value": "AttachmentURI;deeplinks;DefaultEncodingURL;ExternalMediaURL;HierarchyUrl;OrgParentUrls;OrgUrls;OriginalPath;ParentLink;Path;PictureThumbnailURL;PictureURL;PublishingImage;recommendedfor;ServerRedirectedEmbedURL;ServerRedirectedPreviewURL;ServerRedirectedURL;SiteLogo;SitePath;SPSiteURL;UserEncodingURL",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "RenderTemplateId",
+                      "d:Value": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default.js",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "piSearchResultId",
+                      "d:Value": "1_1",
+                      "d:ValueType": "Edm.String"
+                    }
+                  ]
+                }
+              },
+              {
+                "-m:type": "SP.SimpleDataRow",
+                "d:Cells": {
+                  "d:element": [
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Rank",
+                      "d:Value": "12.8811025619507",
+                      "d:ValueType": "Edm.Double"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "DocId",
+                      "d:Value": "5701524",
+                      "d:ValueType": "Edm.Int64"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Title",
+                      "d:Value": "Kautex SharePoint Links",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Path",
+                      "d:Value": "http://myeric2-1.textron.com/Kautex/NWS_INF/Pages/0ERIC2_Content/2012_07_02_Kautex_SharePoint_Links.aspx",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "OriginalPath",
+                      "d:Value": "http://myeric2-1.textron.com/Kautex/NWS_INF/Pages/0ERIC2_Content/2012_07_02_Kautex_SharePoint_Links.aspx",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "PartitionId",
+                      "d:Value": "0c37852b-34d0-418e-91c6-2ac25af4be5b",
+                      "d:ValueType": "Edm.Guid"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "UrlZone",
+                      "d:Value": "3",
+                      "d:ValueType": "Edm.Int32"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "AAMEnabledManagedProperties",
+                      "d:Value": "AttachmentURI;deeplinks;DefaultEncodingURL;ExternalMediaURL;HierarchyUrl;OrgParentUrls;OrgUrls;OriginalPath;ParentLink;Path;PictureThumbnailURL;PictureURL;PublishingImage;recommendedfor;ServerRedirectedEmbedURL;ServerRedirectedPreviewURL;ServerRedirectedURL;SiteLogo;SitePath;SPSiteURL;UserEncodingURL",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "RenderTemplateId",
+                      "d:Value": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default.js",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "piSearchResultId",
+                      "d:Value": "2_1",
+                      "d:ValueType": "Edm.String"
+                    }
+                  ]
+                }
+              },
+              {
+                "-m:type": "SP.SimpleDataRow",
+                "d:Cells": {
+                  "d:element": [
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Rank",
+                      "d:Value": "12.8188486099243",
+                      "d:ValueType": "Edm.Double"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "DocId",
+                      "d:Value": "1311820",
+                      "d:ValueType": "Edm.Int64"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Title",
+                      "d:Value": "Kautex Bonn Holzlar Disaster Recovery on Wheels",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Path",
+                      "d:Value": "http://corp.sp.textron.com/portals/ITPROS/Internal Successes/Kautex - Bonn Holzlar mobile DR solution - September 2014.pptx",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "OriginalPath",
+                      "d:Value": "http://corp.sp.textron.com/portals/ITPROS/Internal Successes/Kautex - Bonn Holzlar mobile DR solution - September 2014.pptx",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "PartitionId",
+                      "d:Value": "0c37852b-34d0-418e-91c6-2ac25af4be5b",
+                      "d:ValueType": "Edm.Guid"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "UrlZone",
+                      "d:Value": "3",
+                      "d:ValueType": "Edm.Int32"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "AAMEnabledManagedProperties",
+                      "d:Value": "AttachmentURI;deeplinks;DefaultEncodingURL;ExternalMediaURL;HierarchyUrl;OrgParentUrls;OrgUrls;OriginalPath;ParentLink;Path;PictureThumbnailURL;PictureURL;PublishingImage;recommendedfor;ServerRedirectedEmbedURL;ServerRedirectedPreviewURL;ServerRedirectedURL;SiteLogo;SitePath;SPSiteURL;UserEncodingURL",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "RenderTemplateId",
+                      "d:Value": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default.js",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "piSearchResultId",
+                      "d:Value": "3_1",
+                      "d:ValueType": "Edm.String"
+                    }
+                  ]
+                }
+              },
+              {
+                "-m:type": "SP.SimpleDataRow",
+                "d:Cells": {
+                  "d:element": [
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Rank",
+                      "d:Value": "12.7756938934326",
+                      "d:ValueType": "Edm.Double"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "DocId",
+                      "d:Value": "1998141",
+                      "d:ValueType": "Edm.Int64"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Title",
+                      "d:Value": "Kautex Introduction Overview",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "Path",
+                      "d:Value": "http://corp.sp.textron.com/sites/eng/etc/tlp/bu/Shared Documents/Kautex_Overview.ppt",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "OriginalPath",
+                      "d:Value": "http://corp.sp.textron.com/sites/eng/etc/tlp/bu/Shared Documents/Kautex_Overview.ppt",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "PartitionId",
+                      "d:Value": "0c37852b-34d0-418e-91c6-2ac25af4be5b",
+                      "d:ValueType": "Edm.Guid"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "UrlZone",
+                      "d:Value": "3",
+                      "d:ValueType": "Edm.Int32"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "AAMEnabledManagedProperties",
+                      "d:Value": "AttachmentURI;deeplinks;DefaultEncodingURL;ExternalMediaURL;HierarchyUrl;OrgParentUrls;OrgUrls;OriginalPath;ParentLink;Path;PictureThumbnailURL;PictureURL;PublishingImage;recommendedfor;ServerRedirectedEmbedURL;ServerRedirectedPreviewURL;ServerRedirectedURL;SiteLogo;SitePath;SPSiteURL;UserEncodingURL",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "RenderTemplateId",
+                      "d:Value": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default.js",
+                      "d:ValueType": "Edm.String"
+                    },
+                    {
+                      "-m:type": "SP.KeyValue",
+                      "d:Key": "piSearchResultId",
+                      "d:Value": "4_1",
+                      "d:ValueType": "Edm.String"
+                    }
+                  ]
+                }
               }
-            }
+            ]
           }
         },
         "d:TotalRows": {
           "-m:type": "Edm.Int32",
-          "#text": "38202"
+          "#text": "28036"
         },
         "d:TotalRowsIncludingDuplicates": {
           "-m:type": "Edm.Int32",
-          "#text": "38202"
+          "#text": "28036"
         }
       },
       "d:SpecialTermResults": { "-m:null": "true" }
@@ -192,7 +462,7 @@
         {
           "-m:type": "SP.KeyValue",
           "d:Key": "RowLimit",
-          "d:Value": "1",
+          "d:Value": "5",
           "d:ValueType": "Edm.Int32"
         },
         {
@@ -222,13 +492,13 @@
         {
           "-m:type": "SP.KeyValue",
           "d:Key": "piPageImpression",
-          "d:Value": "78307814_3108_1033",
+          "d:Value": "78308483_1096_1033",
           "d:ValueType": "Edm.String"
         },
         {
           "-m:type": "SP.KeyValue",
           "d:Key": "SerializedQuery",
-          "d:Value": "<Query Culture=\"en-US\" EnableStemming=\"True\" EnablePhonetic=\"False\" EnableNicknames=\"False\" IgnoreAllNoiseQuery=\"True\" SummaryLength=\"180\" MaxSnippetLength=\"180\" DesiredSnippetLength=\"90\" KeywordInclusion=\"0\" QueryText=\"bell helicopter\" QueryTemplate=\"\" TrimDuplicates=\"True\" Site=\"1a249a66-2b92-4ed6-a515-6dc7c9382585\" Web=\"797f5079-5dce-43da-aa75-0154ff871fae\" KeywordType=\"True\" HiddenConstraints=\"\" />",
+          "d:Value": "<Query Culture=\"en-US\" EnableStemming=\"True\" EnablePhonetic=\"False\" EnableNicknames=\"False\" IgnoreAllNoiseQuery=\"True\" SummaryLength=\"180\" MaxSnippetLength=\"180\" DesiredSnippetLength=\"90\" KeywordInclusion=\"0\" QueryText=\"kautex\" QueryTemplate=\"\" TrimDuplicates=\"True\" Site=\"1a249a66-2b92-4ed6-a515-6dc7c9382585\" Web=\"797f5079-5dce-43da-aa75-0154ff871fae\" KeywordType=\"True\" HiddenConstraints=\"\" />",
           "d:ValueType": "Edm.String"
         }
       ]
