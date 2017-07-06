@@ -1,7 +1,8 @@
 var fs = require('fs'),
     restify = require('restify'),
     builder = require('botbuilder'),
-    request = require('request');
+    request = require('request'),
+    Q = require('q');
 
 // Utils
 function getRandomInt(min, max) {
@@ -68,41 +69,42 @@ bot.dialog('help', (session, args, next) => {
 });
 
 // Search dialog
-bot.dialog('search', (session, args, next) => {
-    var intent = args.intent;
-    session.sendTyping();
-    var results = [
-        new builder.HeroCard(session)
-            .title('ERIC Search Results')
-            .subtitle('2 Results'),
-        new builder.HeroCard(session)
-            .title('Azure Storage')
-            .subtitle('Offload the heavy lifting of data center management')
-            .text('Store and help protect your data. Get durable, highly available data storage across the globe and pay only for what you use.')
-            .buttons([
-                builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/storage/', 'Learn More')
-            ]),
-        new builder.ThumbnailCard(session)
-            .title('DocumentDB')
-            .subtitle('Blazing fast, planet-scale NoSQL')
-            .text('NoSQL service for highly available, globally distributed apps—take full advantage of SQL and JavaScript over document and key-value data without the hassles of on-premises or virtual machine-based cloud database options.')
-            .buttons([
-                builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/documentdb/', 'Learn More')
-            ])
-    ];
-    //ConstructSearchResults(session);
-    var reply = new builder.Message(session)
-        .attachmentLayout(builder.AttachmentLayout.list)
-        .attachments(results);
+bot.dialog('search', [
+    (session) => {
+        //var intent = args.intent;
+        session.sendTyping();
+        builder.Prompts.text(session, 'What would you like to search for?');
+    },(session, results) => {
+        session.sendTyping();
+        var query = results.response;
+        GetSearchResults(query).then(
+            function(data) {
+                var deferred = Q.defer();
+                var cards = [
+                    new builder.HeroCard(session)
+                        .title("ERIC search for " + '"' + query + '"')
+                        .subtitle(data.length + " results"),
+                ];
+                for(var i = 0; i < data.length; i++) {
+                    var new_card = new builder.HeroCard(session)
+                        .subtitle(data[i].title)
+                        .buttons([
+                            builder.CardAction.openUrl(session, data[i].path, 'Open')
+                        ]);
+                    cards.push(new_card);
+                }
+                deferred.resolve(cards);
+                return deferred.promise;
+            }
+        ).then(function(data) {
+                var reply = new builder.Message(session)
+                    .attachmentLayout(builder.AttachmentLayout.list)
+                    .attachments(data);
+                session.endDialog(reply);
+            });
 
-    session.send(reply);
-}).triggerAction({
-    matches: /^(search|find|eric)$/,
-    onSelectAction: (session, args, next) => {
-        // Add the help dialog to the dialog stack
-        // (override the default behavior of replacing the stack)
-        session.beginDialog(args.action, args);
-    }
+    }]).triggerAction({
+    matches: /^(search|find)$/
 });
 
 // Bookmarks dialog
@@ -111,7 +113,7 @@ bot.dialog('bookmarks', (session, args, next) => {
     session.sendTyping();
     // Send message to the user and end this dialog
     var msg = new builder.Message(session)
-        .text("Here are the bookmarks you use most frequently:")
+        .text("Here are links you've bookmarked.")
         .suggestedActions(
             builder.SuggestedActions.create(
                 session, [
@@ -165,95 +167,57 @@ bot.dialog('calendar', (session, args, next) => {
 });
 
 // Construct search results
+var GetSearchResults = function(query) {
+    var deferred = Q.defer();
+    console.log(deferred);
+    request('http://localhost:8000/example.json', function(err, res, body) {
+        // TODO: Host here is local host to for json file --> change to proxy server
+        if(err) {
+            deferred.reject(err);
+        }
+        console.log(res.statusCode);
+        var json = JSON.parse(body);
+        var resultArray = json['d:query']['d:PrimaryQueryResult']['d:RelevantResults']['d:Table']['d:Rows']['d:element'];
+        var results = [];
 
-function ConstructSearchResults(session) {
-    var results = [];
-    return [
-        new builder.HeroCard(session)
-            .title('Azure Storage')
-            .subtitle('Offload the heavy lifting of data center management')
-            .text('Store and help protect your data. Get durable, highly available data storage across the globe and pay only for what you use.')
-            .images([
-                builder.CardImage.create(session, 'https://docs.microsoft.com/en-us/azure/storage/media/storage-introduction/storage-concepts.png')
-            ])
+        for (var i = 0; i < resultArray.length; i++) {
+            var rowArray = resultArray[i]['d:Cells']['d:element'];
+
+            for (j = 1; j < rowArray.length; j++) {
+                var title, path, result;
+
+                if (rowArray[j]['d:Key'] === 'Title' && rowArray[j + 1]['d:Key']) {
+                    title = rowArray[j]['d:Value'].toString();
+                    path = rowArray[j + 1]['d:Value'].toString();
+
+                    result = {
+                        'title': title,
+                        'path': path
+                    };
+
+                    results.push(result);
+                }
+            }
+        }
+        deferred.resolve(results);
+        console.log(deferred);
+    });
+    return deferred.promise;
+};
+
+var ConstructSearchResults = function(data, session) {
+    var deferred = Q.defer();
+    console.log("CONSTRUCT " + JSON.stringify(data));
+    var cards = [];
+    for(var i = 0; i < data.length; i++) {
+        var new_card = new builder.HeroCard(session)
+            .title(data[i].title)
             .buttons([
-                builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/storage/', 'Learn More')
-            ]),
-        /*
-         new builder.ThumbnailCard(session)
-         .title('DocumentDB')
-         .subtitle('Blazing fast, planet-scale NoSQL')
-         .text('NoSQL service for highly available, globally distributed apps—take full advantage of SQL and JavaScript over document and key-value data without the hassles of on-premises or virtual machine-based cloud database options.')
-         .images([
-         builder.CardImage.create(session, 'https://docs.microsoft.com/en-us/azure/documentdb/media/documentdb-introduction/json-database-resources1.png')
-         ])
-         .buttons([
-         builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/documentdb/', 'Learn More')
-         ]),
-
-         new builder.HeroCard(session)
-         .title('Azure Functions')
-         .subtitle('Process events with a serverless code architecture')
-         .text('An event-based serverless compute experience to accelerate your development. It can scale based on demand and you pay only for the resources you consume.')
-         .images([
-         builder.CardImage.create(session, 'https://azurecomcdn.azureedge.net/cvt-5daae9212bb433ad0510fbfbff44121ac7c759adc284d7a43d60dbbf2358a07a/images/page/services/functions/01-develop.png')
-         ])
-         .buttons([
-         builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/functions/', 'Learn More')
-         ]),
-
-         new builder.ThumbnailCard(session)
-         .title('Cognitive Services')
-         .subtitle('Build powerful intelligence into your applications to enable natural and contextual interactions')
-         .text('Enable natural and contextual interaction with tools that augment users\' experiences using the power of machine-based intelligence. Tap into an ever-growing collection of powerful artificial intelligence algorithms for vision, speech, language, and knowledge.')
-         .images([
-         builder.CardImage.create(session, 'https://azurecomcdn.azureedge.net/cvt-68b530dac63f0ccae8466a2610289af04bdc67ee0bfbc2d5e526b8efd10af05a/images/page/services/cognitive-services/cognitive-services.png')
-         ])
-         .buttons([
-         builder.CardAction.openUrl(session, 'https://azure.microsoft.com/en-us/services/cognitive-services/', 'Learn More')
-         ])*/
-    ];
-}
-
-
-/*v
- */
-/*  request('https://jsonplaceholder.typicode.com/posts/1', function(err, res, body) {
- json = JSON.parse(body);
- console.log(json);
- output = json.id ;//Change to needed data
- session.endDialogWithResult(output.toString());
- });*/
-
-/*
-TODO integrate
- request('http://127.0.0.1:8080/', function(err, res, body) { // TODO: Host here is local host to for json file --> change to proxy server
- console.log(res.statusCode);
- json = JSON.parse(body)
- var results = []
- var resultArray = json['d:query']['d:PrimaryQueryResult']['d:RelevantResults']
- ['d:Table']['d:Rows']['d:element']
-
- for (i = 0; i < resultArray.length; i++) {
- var rowArray = resultArray[i]['d:Cells']['d:element']
-
- for (j = 1; j < rowArray.length; j++) {
- var title, path, result;
-
- if (rowArray[j]['d:Key'] == 'Title' && rowArray[j + 1]['d:Key']) {
- title = rowArray[j]['d:Value'].toString()
- path = rowArray[j + 1]['d:Value'].toString()
-
- result = {
- 'title': title,
- 'path': path
- }
- results.push(result);
-
- }
- }
- }
- console.log(results);
- //No message sent
- })
- */
+                builder.CardAction.openUrl(session, data[i].path, 'Open')
+            ]);
+        cards.push(new_card);
+    }
+    console.log("CARDS " +cards);
+    deferred.resolve(cards);
+    return deferred.promise;
+};
