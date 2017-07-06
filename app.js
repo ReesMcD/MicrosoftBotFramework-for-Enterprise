@@ -224,3 +224,36 @@ function ConstructSearchResults(session) {
  output = json.id ;//Change to needed data
  session.endDialogWithResult(output.toString());
  });*/
+
+/*
+TODO integrate
+ request('http://127.0.0.1:8080/', function(err, res, body) { // TODO: Host here is local host to for json file --> change to proxy server
+ console.log(res.statusCode);
+ json = JSON.parse(body)
+ var results = []
+ var resultArray = json['d:query']['d:PrimaryQueryResult']['d:RelevantResults']
+ ['d:Table']['d:Rows']['d:element']
+
+ for (i = 0; i < resultArray.length; i++) {
+ var rowArray = resultArray[i]['d:Cells']['d:element']
+
+ for (j = 1; j < rowArray.length; j++) {
+ var title, path, result;
+
+ if (rowArray[j]['d:Key'] == 'Title' && rowArray[j + 1]['d:Key']) {
+ title = rowArray[j]['d:Value'].toString()
+ path = rowArray[j + 1]['d:Value'].toString()
+
+ result = {
+ 'title': title,
+ 'path': path
+ }
+ results.push(result);
+
+ }
+ }
+ }
+ console.log(results);
+ //No message sent
+ })
+ */
