@@ -1,0 +1,240 @@
+{
+  "d:query": {
+    "-xmlns:d": "http://schemas.microsoft.com/ado/2007/08/dataservices",
+    "-xmlns:m": "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata",
+    "-xmlns:georss": "http://www.georss.org/georss",
+    "-xmlns:gml": "http://www.opengis.net/gml",
+    "-m:type": "Microsoft.Office.Server.Search.REST.SearchResult",
+    "d:ElapsedTime": {
+      "-m:type": "Edm.Int32",
+      "#text": "203"
+    },
+    "d:PrimaryQueryResult": {
+      "-m:type": "Microsoft.Office.Server.Search.REST.QueryResult",
+      "d:CustomResults": { "-m:type": "Collection(Microsoft.Office.Server.Search.REST.CustomResult)" },
+      "d:QueryId": "fdd160e0-8011-4ba9-b166-31649f0767ed",
+      "d:QueryRuleId": {
+        "-m:type": "Edm.Guid",
+        "#text": "00000000-0000-0000-0000-000000000000"
+      },
+      "d:RefinementResults": { "-m:null": "true" },
+      "d:RelevantResults": {
+        "-m:type": "Microsoft.Office.Server.Search.REST.RelevantResults",
+        "d:GroupTemplateId": { "-m:null": "true" },
+        "d:ItemTemplateId": { "-m:null": "true" },
+        "d:Properties": {
+          "d:element": [
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "GenerationId",
+              "d:Value": "9223372036854775806",
+              "d:ValueType": "Edm.Int64"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "ExecutionTimeMs",
+              "d:Value": "172",
+              "d:ValueType": "Edm.Int32"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "QueryModification",
+              "d:Value": "bell helicopter -ContentClass=urn:content-class:SPSPeople",
+              "d:ValueType": "Edm.String"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "RenderTemplateId",
+              "d:Value": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Group_Default.js",
+              "d:ValueType": "Edm.String"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "piPageImpressionBlockType",
+              "d:Value": "2",
+              "d:ValueType": "Edm.Byte"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "StartRecord",
+              "d:Value": "0",
+              "d:ValueType": "Edm.Int32"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "IsLastBlockInSubstrate",
+              "d:Value": "true",
+              "d:ValueType": "Edm.Boolean"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "IsFirstBlockInSubstrate",
+              "d:Value": "false",
+              "d:ValueType": "Edm.Boolean"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "IsFirstPinnedResultBlock",
+              "d:Value": "false",
+              "d:ValueType": "Edm.Boolean"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "IsLastPinnedResultBlock",
+              "d:Value": "false",
+              "d:ValueType": "Edm.Boolean"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "IsFirstRankedResultBlock",
+              "d:Value": "true",
+              "d:ValueType": "Edm.Boolean"
+            },
+            {
+              "-m:type": "SP.KeyValue",
+              "d:Key": "IsLastRankedResultBlock",
+              "d:Value": "true",
+              "d:ValueType": "Edm.Boolean"
+            }
+          ]
+        },
+        "d:ResultTitle": { "-m:null": "true" },
+        "d:ResultTitleUrl": { "-m:null": "true" },
+        "d:RowCount": {
+          "-m:type": "Edm.Int32",
+          "#text": "1"
+        },
+        "d:Table": {
+          "-m:type": "SP.SimpleDataTable",
+          "d:Rows": {
+            "d:element": [{
+              "-m:type": "SP.SimpleDataRow",
+              "d:Cells": {
+                "d:element": [
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "Rank",
+                    "d:Value": "20.8995265960693",
+                    "d:ValueType": "Edm.Double"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "DocId",
+                    "d:Value": "5936562",
+                    "d:ValueType": "Edm.Int64"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "Title",
+                    "d:Value": "Bell-Helicopter_Brand-Governance_150616-R00_Email",
+                    "d:ValueType": "Edm.String"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "Path",
+                    "d:Value": "http://eric2-1.textron.com/BellHelicopter/COM_INF/ERICDocuments/Bell-Helicopter_Brand-Governance_150616-R00_Email.pdf",
+                    "d:ValueType": "Edm.String"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "OriginalPath",
+                    "d:Value": "http://eric2-1.textron.com/BellHelicopter/COM_INF/ERICDocuments/Bell-Helicopter_Brand-Governance_150616-R00_Email.pdf",
+                    "d:ValueType": "Edm.String"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "PartitionId",
+                    "d:Value": "0c37852b-34d0-418e-91c6-2ac25af4be5b",
+                    "d:ValueType": "Edm.Guid"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "UrlZone",
+                    "d:Value": "0",
+                    "d:ValueType": "Edm.Int32"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "AAMEnabledManagedProperties",
+                    "d:Value": "AttachmentURI;deeplinks;DefaultEncodingURL;ExternalMediaURL;HierarchyUrl;OrgParentUrls;OrgUrls;OriginalPath;ParentLink;Path;PictureThumbnailURL;PictureURL;PublishingImage;recommendedfor;ServerRedirectedEmbedURL;ServerRedirectedPreviewURL;ServerRedirectedURL;SiteLogo;SitePath;SPSiteURL;UserEncodingURL",
+                    "d:ValueType": "Edm.String"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "RenderTemplateId",
+                    "d:Value": "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default.js",
+                    "d:ValueType": "Edm.String"
+                  },
+                  {
+                    "-m:type": "SP.KeyValue",
+                    "d:Key": "piSearchResultId",
+                    "d:Value": "0_1",
+                    "d:ValueType": "Edm.String"
+                  }
+                ]
+              }
+            }
+          ]
+          }
+        },
+        "d:TotalRows": {
+          "-m:type": "Edm.Int32",
+          "#text": "38203"
+        },
+        "d:TotalRowsIncludingDuplicates": {
+          "-m:type": "Edm.Int32",
+          "#text": "38203"
+        }
+      },
+      "d:SpecialTermResults": { "-m:null": "true" }
+    },
+    "d:Properties": {
+      "d:element": [
+        {
+          "-m:type": "SP.KeyValue",
+          "d:Key": "RowLimit",
+          "d:Value": "1",
+          "d:ValueType": "Edm.Int32"
+        },
+        {
+          "-m:type": "SP.KeyValue",
+          "d:Key": "SourceId",
+          "d:Value": "8413cd39-2156-4e00-b54d-11efd9abdb89",
+          "d:ValueType": "Edm.Guid"
+        },
+        {
+          "-m:type": "SP.KeyValue",
+          "d:Key": "WasGroupRestricted",
+          "d:Value": "false",
+          "d:ValueType": "Edm.Boolean"
+        },
+        {
+          "-m:type": "SP.KeyValue",
+          "d:Key": "IsPartial",
+          "d:Value": "false",
+          "d:ValueType": "Edm.Boolean"
+        },
+        {
+          "-m:type": "SP.KeyValue",
+          "d:Key": "EnableInterleaving",
+          "d:Value": "true",
+          "d:ValueType": "Edm.Boolean"
+        },
+        {
+          "-m:type": "SP.KeyValue",
+          "d:Key": "piPageImpression",
+          "d:Value": "78318778_3108_1033",
+          "d:ValueType": "Edm.String"
+        },
+        {
+          "-m:type": "SP.KeyValue",
+          "d:Key": "SerializedQuery",
+          "d:Value": "<Query Culture=\"en-US\" EnableStemming=\"True\" EnablePhonetic=\"False\" EnableNicknames=\"False\" IgnoreAllNoiseQuery=\"True\" SummaryLength=\"180\" MaxSnippetLength=\"180\" DesiredSnippetLength=\"90\" KeywordInclusion=\"0\" QueryText=\"bell helicopter\" QueryTemplate=\"\" TrimDuplicates=\"True\" Site=\"1a249a66-2b92-4ed6-a515-6dc7c9382585\" Web=\"797f5079-5dce-43da-aa75-0154ff871fae\" KeywordType=\"True\" HiddenConstraints=\"\" />",
+          "d:ValueType": "Edm.String"
+        }
+      ]
+    },
+    "d:SecondaryQueryResults": { "-m:type": "Collection(Microsoft.Office.Server.Search.REST.QueryResult)" },
+    "d:TriggeredRules": { "-m:type": "Collection(Edm.Guid)" }
+  }
+}

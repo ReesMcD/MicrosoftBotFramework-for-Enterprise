@@ -119,7 +119,7 @@ bot.dialog('bookmarks', (session, args, next) => {
                 session, [
                     builder.CardAction.openUrl(session, 'https://www.microsoft.com/en-us/windows/cortana', 'Pay & Benefits'),
                     builder.CardAction.openUrl(session, 'https://www.microsoft.com/en-us/windows/cortana', 'Service Requests'),
-                    builder.CardAction.openUrl(session, 'https://www.microsoft.com/en-us/windows/cortana', 'ERIC-TV')
+                    builder.CardAction.openUrl(session, 'https://textron.mc.kontiki.com/global2/home', 'ERIC-TV')
                 ]
             ));
     session.endDialog(msg);
@@ -169,8 +169,15 @@ bot.dialog('calendar', (session, args, next) => {
 // Construct search results
 var GetSearchResults = function(query) {
     var deferred = Q.defer();
+    var url;
     console.log(deferred);
-    request('http://localhost:8000/example.json', function(err, res, body) {
+    if(query == 'kautex') {
+      url = 'http://localhost:8000/example1.json';
+    } else if(query == 'bell'){
+      url = 'http://localhost:8000/example2.json';
+    }
+
+    request(url, function(err, res, body) {
         // TODO: Host here is local host to for json file --> change to proxy server
         if(err) {
             deferred.reject(err);
